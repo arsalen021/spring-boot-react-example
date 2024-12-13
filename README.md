@@ -26,8 +26,10 @@ You can test the main API using the following curl commands (shown with its outp
 
 To see the frontend, navigate to http://localhost:8080. You are immediately redirected to a login form. Log in as `greg/turnquist`
 
-docker build --no-cache . -t spring-boot-react-example:latest
-
 ```
 curl -v -u greg:turnquist -X PUT -H "Content-Type: application/json" -d '{"firstName" : "Frodo","lastName" : "Baggins","description" : "ring bearer","manager" : {"name" : "greg","roles" : [ "ROLE_MANAGER" ]},"_links" : {"self" : {"href" : "http://localhost:8080/api/employees/1"}}}' localhost:8080/api/employees/3
 ```
+## Docker
+docker build --no-cache . -t spring-boot-react-example:latest
+## Helm
+helm package spring-boot-react-example/
